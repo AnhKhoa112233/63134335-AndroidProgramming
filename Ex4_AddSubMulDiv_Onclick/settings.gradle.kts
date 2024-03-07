@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ex3_SimpleSumApp"
-include(":app")
+rootProject.name = "Ex4_AddSubMulDiv_Onclick"
 include(":app")
  
