@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         float tong= soA+soB;
         //b3: Hien ket qua ve edt_Kq
             //b3.1Tim edt_kq
-        EditText editTextKq=(EditText) findViewById(R.id.edt_kq);
+
             //b3.2 bien dl thanh chuoi
         String chuoiKq = String.valueOf(tong);
             //b3.3 gan kq len dieu khien
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void HamXuLyTru(){
         //b1 Tim dl cua 2 so
         //b1.1 Tim edt so 1 va 2
-
+        TimDieuKhien();
         //b1.2 lay dl tu 2 dieu khien do kieu dl String
         String sothu1=editTextso1.getText().toString();
         String sothu2 =editTextso2.getText().toString();
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         float tru= soA-soB;
         //b3: Hien ket qua ve edt_Kq
         //b3.1Tim edt_kq
-        EditText editTextKq=(EditText) findViewById(R.id.edt_kq);
+
         //b3.2 bien dl thanh chuoi
         String chuoiKq = String.valueOf(tru);
         //b3.3 gan kq len dieu khien
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void HamXuLyNhan(){
         //b1 Tim dl cua 2 so
         //b1.1 Tim edt so 1 va 2
-
+        TimDieuKhien();
         //b1.2 lay dl tu 2 dieu khien do kieu dl String
         String sothu1=editTextso1.getText().toString();
         String sothu2 =editTextso2.getText().toString();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         float nhan= soA*soB;
         //b3: Hien ket qua ve edt_Kq
         //b3.1Tim edt_kq
-        EditText editTextKq=(EditText) findViewById(R.id.edt_kq);
+
         //b3.2 bien dl thanh chuoi
         String chuoiKq = String.valueOf(nhan);
         //b3.3 gan kq len dieu khien
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     public void HamXuLyChia(){
         //b1 Tim dl cua 2 so
         //b1.1 Tim edt so 1 va 2
-
+        TimDieuKhien();
         //b1.2 lay dl tu 2 dieu khien do kieu dl String
         String sothu1=editTextso1.getText().toString();
         String sothu2 =editTextso2.getText().toString();
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         float chia= soA/soB;
         //b3: Hien ket qua ve edt_Kq
         //b3.1Tim edt_kq
-        EditText editTextKq=(EditText) findViewById(R.id.edt_kq);
+       
         //b3.2 bien dl thanh chuoi
         String chuoiKq = String.valueOf(chia);
         //b3.3 gan kq len dieu khien
