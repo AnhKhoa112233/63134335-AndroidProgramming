@@ -19,8 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ex3_SimpleSumApp"
-include(":app")
-include(":app")
+rootProject.name = "Ex_6Cong_ListViewThemXoaSua"
 include(":app")
  
