@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 public class SwingDoiSoNhiPhan extends JFrame {
 
-    private JTextField decimalField;
-    private JTextField signedBinaryField;
+    private JTextField ThapPhanField;
+    private JTextField NhiPhanField;
 
     public SwingDoiSoNhiPhan() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Sang\\Downloads\\188987.png"));
@@ -15,12 +15,12 @@ public class SwingDoiSoNhiPhan extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        JLabel decimalLabel = new JLabel("Thập phân:");
-        JLabel signedBinaryLabel = new JLabel("Nhị phân:");
+        JLabel ThapPhanLabel = new JLabel("Thập phân:");
+        JLabel NhiPhanLabel = new JLabel("Nhị phân:");
 
-        decimalField = new JTextField(10);
-        signedBinaryField = new JTextField(10);
-        signedBinaryField.setEditable(false);
+        ThapPhanField = new JTextField(10);
+        NhiPhanField = new JTextField(10);
+        NhiPhanField.setEditable(false);
 
         JButton convertButton = new JButton("Đổi");
         JButton clearButton = new JButton("Xóa");
@@ -29,10 +29,10 @@ public class SwingDoiSoNhiPhan extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    int decimal = Integer.parseInt(decimalField.getText());
+                    int decimal = Integer.parseInt(ThapPhanField.getText());
                     if (decimal >= -Math.pow(2, 7) && decimal <= Math.pow(2, 7) - 1) {
-                        String signedBinary = convertToSignedBinary(decimal);
-                        signedBinaryField.setText(signedBinary);
+                        String NhiPhan = convertToSignedBinary(decimal);
+                        NhiPhanField.setText(NhiPhan);
                     } else {
                         JOptionPane.showMessageDialog(null, "Không thể đổi số này vui lòng nhập lại", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -45,8 +45,8 @@ public class SwingDoiSoNhiPhan extends JFrame {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                decimalField.setText("");
-                signedBinaryField.setText("");
+            	ThapPhanField.setText("");
+                NhiPhanField.setText("");
             }
         });
 
@@ -55,10 +55,10 @@ public class SwingDoiSoNhiPhan extends JFrame {
         buttonPanel.add(clearButton);
 
         JPanel inputPanel = new JPanel(new GridLayout(2, 2));
-        inputPanel.add(decimalLabel);
-        inputPanel.add(decimalField);
-        inputPanel.add(signedBinaryLabel);
-        inputPanel.add(signedBinaryField);
+        inputPanel.add(ThapPhanLabel);
+        inputPanel.add(ThapPhanField);
+        inputPanel.add(NhiPhanLabel);
+        inputPanel.add(NhiPhanField);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(inputPanel, BorderLayout.CENTER);
