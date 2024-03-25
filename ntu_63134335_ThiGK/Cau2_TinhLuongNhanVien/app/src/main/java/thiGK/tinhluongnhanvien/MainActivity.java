@@ -2,6 +2,8 @@ package thiGK.tinhluongnhanvien;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -35,6 +37,17 @@ public class MainActivity extends AppCompatActivity {
          @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ListView lvNhanVien= findViewById(R.id.lvdsNhanVien);
          //B3.2 Gan
         lvNhanVien.setAdapter(adapterNhanVien);
-        //B4
+        //B4 Ham Xu Lu Kien
+        lvNhanVien.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Lấy tên nhân viên được click
+                String selectedNhanVien = dsNhanVien.get(position);
+                //Chuyen sang layout tinh luong khi click vao
+                setContentView(R.layout.tinhluong);
+
+            }
+        });
     }
+
 }
