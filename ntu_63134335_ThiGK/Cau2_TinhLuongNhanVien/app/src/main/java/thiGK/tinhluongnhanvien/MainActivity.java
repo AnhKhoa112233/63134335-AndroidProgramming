@@ -49,16 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 // Lấy tên nhân viên từ danh sách
                 String tenNhanVien = dsNhanVien.get(position);
 
-                // Tạo Intent
                 Intent intent = new Intent(MainActivity.this, TinhLuongActivity.class);
 
-                // Đưa tên nhân viên vào Intent
+                    // Đưa tên nhân viên vào Intent
                 intent.putExtra("", tenNhanVien);
 
-
-
-                //Chuyen sang layout tinh luongong); khi click vao
-                setContentView(R.layout.tinhluong);
+                // Chuyển sang TinhLuongActivity
+                startActivity(intent);
 
             }
         });
@@ -105,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         // Bộ xử lý cho nút xóa nhân viên
         Button btnXoa = findViewById(R.id.btn_xoa);
         btnXoa.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 // Lấy tên nhân viên từ EditText
