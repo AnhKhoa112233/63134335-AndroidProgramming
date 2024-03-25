@@ -17,7 +17,7 @@
         android:layout_marginTop="44dp"
         android:text="Xóa"
         app:layout_constraintStart_toEndOf="@+id/btn_them"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nam" />
 
     <TextView
         android:id="@+id/textView2"
@@ -27,12 +27,12 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="12dp"
         android:text="Nhập tên nhân viên: "
-        app:layout_constraintEnd_toStartOf="@+id/editTextText"
+        app:layout_constraintEnd_toStartOf="@+id/edt_nam"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edt_nam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -64,9 +64,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nam" />
 
     <ListView
+        android:id="@+id/lvdsNhanVien"
         android:layout_width="409dp"
         android:layout_height="459dp"
         android:layout_marginTop="16dp"
