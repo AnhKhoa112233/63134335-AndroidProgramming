@@ -1,6 +1,9 @@
 package thigk.gioithieubanthan;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +18,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        Button btnThongTin = findViewById(R.id.btn_ThongTin);
+        btnThongTin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Tạo Intent để chuyển đến ThongTinActivity
+                Intent intent_ThongTin = new Intent(MainActivity.this, ThongTinActivity.class);
+                startActivity(intent_ThongTin);
+            }
         });
+        Button btnSoThich = findViewById(R.id.btn_SoThich);
+        btnSoThich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Tạo Intent để chuyển đến SoThichActivity
+                Intent intent = new Intent(MainActivity.this, SoThichActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
 }
