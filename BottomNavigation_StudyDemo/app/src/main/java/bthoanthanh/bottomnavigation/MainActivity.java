@@ -1,23 +1,59 @@
 package bthoanthanh.bottomnavigation;
 
 import android.app.Activity;
-
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-
+public class MainActivity extends AppCompatActivity{
+    BottomNavigationView bottomNavigationView;
+    FrameLayout fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        fragment = findViewById(R.id.frame);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int itemID = menuItem.getItemId();
+                if(itemID == R.id.home){
+                    loadFragment(new HomeFragment(),false);
+                }else if (itemID == R.id.profile){
+                    loadFragment(new ProfileFragment(),false);
+                }else if (itemID == R.id.settings) {
+                    loadFragment(new SettingsFragment(), false);
+                }
 
+                return true;
+            }
+
+        });
+        loadFragment(new HomeFragment(),true);
+    }
+    private void loadFragment(Fragment fragment,boolean isApp){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if (isApp){
+            fragmentTransaction.add(R.id.frame,fragment);
+        }else {
+            fragmentTransaction.add(R.id.frame,fragment);
+        }
+        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.commit();
     }
 }
